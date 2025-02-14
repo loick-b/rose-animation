@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Rose Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fce4ec;
+            overflow: hidden;
+        }
+        .stem {
+            stroke: green;
+            stroke-width: 4;
+            fill: none;
+        }
+        .petal {
+            fill: pink;
+            transform-origin: center;
+            animation: bloom 3s ease-in-out forwards;
+        }
+        @keyframes bloom {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes sway {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+        .flower {
+            animation: sway 5s infinite alternate ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <svg width="200" height="300" viewBox="0 0 200 300">
+        <g class="flower">
+            <line class="stem" x1="100" y1="150" x2="100" y2="300"/>
+            <circle class="petal" cx="100" cy="130" r="20"/>
+            <circle class="petal" cx="80" cy="110" r="20"/>
+            <circle class="petal" cx="120" cy="110" r="20"/>
+            <circle class="petal" cx="90" cy="90" r="20"/>
+            <circle class="petal" cx="110" cy="90" r="20"/>
+        </g>
+    </svg>
+</body>
+</html>
